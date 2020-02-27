@@ -4,7 +4,7 @@ import kotlin.jvm.functions.Function2;
 
 /**
  * FunctionalInterface samo nagovestava kompajleru da interfejs ne sme imati vise od jednog metoda jer ce biti koriscen
- * kao pokazivac samo jednu lambda funkciju.
+ * kao pokazivac na samo jednu lambda funkciju.
  */
 @FunctionalInterface
 interface Operable {
@@ -15,13 +15,14 @@ interface Operable {
  * Da se podsetimo - lambde u Javi su anonimne funkcije, tj., funkcije koje nemaju ime.
    Uglavnom se koriste na mestima gde su nam potrebne kratke funkcije koje nisu bas vezane za biznis logiku klase
    koja ih koristi. Posto nema smisla da im se dodeljuje ime i da se definisu kao funkcije klase, definisemo ih na mestu
-   na kom ih koristimo i cuvamo reference na njih pomocu interfejsa.
+   na kom ih koristimo i drzimo reference na njih pomocu interfejsa.
 
    Potpis lambde je definisan na sledeci nacin:
     1. ulazni parametri moraju biti navedeni unutar () zagrada
     2. -> operator sledi nakon ulaznih parametara i oznacava da sledi telo funkcije
     3. telo funkcije:
-        -
+        - za vise izraza koristimo { } da oznacimo pocetak i kraj tela
+        - za jedan izraz ne moramo da koristimo { } i mozemo da izostavimo return kljucnu rec
     Dakle:
     (ulazniParametar1, ulazniParametar2, ..., ulazniParametarN) -> {
         // telo funkcije
